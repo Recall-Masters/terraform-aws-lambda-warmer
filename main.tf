@@ -1,6 +1,6 @@
 resource aws_cloudwatch_event_rule this {
   count               = var.enable == true ? 1 : 0
-  name                = "lambda_warmer-${var.function_name}"
+  name                = join("-", compact(["lambda_warmer", var.function_name, var.name_suffix]))
   description         = "Keep warm ${var.function_name} lambda"
   schedule_expression = var.rate
 }

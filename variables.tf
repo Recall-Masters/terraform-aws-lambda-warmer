@@ -2,6 +2,10 @@ variable "enable" {
   default = true
 }
 
+variable "add_permission" {
+  default = true
+}
+
 variable "function_name" {
 }
 
